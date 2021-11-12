@@ -1,2 +1,2 @@
 # dotfiles
-$HOME/.*
+Some Config Files
