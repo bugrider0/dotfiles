@@ -1,0 +1,25 @@
+# Globals
+separator=false
+separator_block_width=1
+border=#4c7899
+background=#222222
+
+# scripts to /home/hsn/.config/i3blocks/scripts/
+
+[kbLayout]
+command=scripts/kbLayout
+interval=once
+
+[backLight]
+command=scripts/backLight
+interval=once
+
+[myDate]
+command=scripts/myDate
+interval=3600
+
+[myTime]
+command=scripts/myTime
+interval=60
+
+

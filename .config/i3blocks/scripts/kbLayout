@@ -1,0 +1,7 @@
+#!/bin/bash
+
+current_layout=`setxkbmap -query | grep -Eo "[usir]{2}$"`
+
+echo " $current_layout "
+
+
