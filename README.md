@@ -5,9 +5,9 @@ Gnu/Linux Configuration Files
 ```
 lspci | grep "BCM"
 ```
-ArchLinux, ...      ```sudo pacman -S b43-fwcutter```
-Fedora, ...         ```sudo dnf install b43-fwcutter```
-Debian, Ubuntu, ... ```sudo apt install b43-fwcutter```
+###### ArchLinux, ...      ```sudo pacman -S b43-fwcutter```
+###### Fedora, ...         ```sudo dnf install b43-fwcutter```
+###### Debian, Ubuntu, ... ```sudo apt install b43-fwcutter```
 ```
 tar xvf broadcom-wl-6.30.163.46.tar.bz2
 ```
