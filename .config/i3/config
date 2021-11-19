@@ -30,6 +30,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+exec --no-startup-id feh --bg-scale ~/Pictures/bg/10-12-6k.jpg
+
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   -5%
@@ -40,7 +42,7 @@ bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -93,6 +95,9 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod1+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -152,16 +157,16 @@ mode "resize" {
         # Pressing right will grow   the window’s width.
         # Pressing up    will shrink the window’s height.
         # Pressing down  will grow   the window’s height.
-        bindsym j         resize shrink width  5 px or 5 ppt
-        bindsym k         resize grow   height 5 px or 5 ppt
-        bindsym l         resize shrink height 5 px or 5 ppt
-        bindsym semicolon resize grow   width  5 px or 5 ppt
+        bindsym j         resize shrink width  1 px or 1 ppt
+        bindsym k         resize grow   height 1 px or 1 ppt
+        bindsym l         resize shrink height 1 px or 1 ppt
+        bindsym semicolon resize grow   width  1 px or 1 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left  resize shrink width  5 px or 5 ppt
-        bindsym Down  resize grow   height 5 px or 5 ppt
-        bindsym Up    resize shrink height 5 px or 5 ppt
-        bindsym Right resize grow   width  5 px or 5 ppt
+        bindsym Left  resize shrink width  1 px or 1 ppt
+        bindsym Down  resize grow   height 1 px or 1 ppt
+        bindsym Up    resize shrink height 1 px or 1 ppt
+        bindsym Right resize grow   width  1 px or 1 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -174,8 +179,12 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        font pango: Fira Code Medium 12
+        font pango: Fira Code Retina 12
         position top
+
+        mode hide
+        hidden_state hide
+        modifier $mod+shift
 
         status_command i3blocks
 }
@@ -184,13 +193,13 @@ bar {
 bindsym XF86MonBrightnessUp   exec sudo b_up.sh   # increase screen brightness
 bindsym XF86MonBrightnessDown exec sudo b_down.sh # decrease screen brightness
 
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 2
 
 for_window [class=".*"] layout tabbed
 
-bindsym $mod+space exec kbl.sh
-
-
-
+bindsym $mod+c exec code
+bindsym $mod+b exec google-chrome-stable
+bindsym $mod+t exec thunar
+bindsym $mod+m exec mousepad
 
 
