@@ -1,5 +1,5 @@
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="strug"
 
 plugins=(
     git
@@ -9,11 +9,9 @@ plugins=(
     docker
     )
 
-source /home/hosein/.oh-my-zsh/oh-my-zsh.sh
+source /home/hsn/.oh-my-zsh/oh-my-zsh.sh
 
 # Aliases
-
-alias mirrorUpdate="sudo reflector --save /etc/pacman.d/mirrorlist"
 
 alias l="ls -trhFs"
 alias a="ls -trhFas"
@@ -29,11 +27,10 @@ alias rm="rm -rf"
 alias cp="cp -r"
 
 alias servers="ss -nlt"
-alias mpv="mpv --loop"
 
 alias zshConfig="nvim ~/.zshrc"
 alias vimConfig="nvim ~/.config/nvim/init.vim"
 alias gitConfig="nvim ~/.gitconfig"
-
-
+alias mp="mpv ~/Music"
+alias nets="netstat -na | grep : "
 
