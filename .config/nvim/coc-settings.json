@@ -1,0 +1,17 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "*.js",
+        "*.jsx",
+        "*.ts",
+        "*.tsx",
+        "*.html",
+        "*.css",
+        "*.json",
+        "*.ejs"
+    ],
+    "prettier.tabWidth": 4,
+    "hover.target": "preview",
+    "tsserver.log": "verbose",
+    "tslint.jsEnable": true,
+    "list.height": 20
+}
