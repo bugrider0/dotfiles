@@ -1,15 +1,15 @@
-*foreground:    #FFFFFF
-*background:    #252525
-*font:          xft:monospace:Retina:size=11
 
-*iso14755:       False
-*iso14755_52:    False
+*foreground:        #FFFFFF
+*background:        #222222
 
-*scrollBar:      False
+*font:              xft:Operator Mono Lig:Medium:size=12
+*boldFont:          xft:Operator Mono Lig:Medium:size=12
+*italicFont:        xft:Operator Mono Lig:Medium:Italic:size=12
+*boldItalicFont:    xft:Operator Mono Lig:Medium:Italic:size=12
 
-URxvt.perl-ext-common:         default,clipboard,url-select,keyboard-select
-URxvt.url-select.launcher:     /bin/firefox
-URxvt.url-select.underline:    true
-URxvt.keysym.M-u:              perl:url-select:select_next
-URxvt.keysym.M-Escape:         perl:keyboard-select:activate
-URxvt.keysym.M-s:              perl:keyboard-select:search
+*scrollBar:         False
+*letterSpace:       -1
+
+*internalBorder:    0
+
+
