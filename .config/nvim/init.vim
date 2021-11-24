@@ -1,22 +1,22 @@
-"""""""""""""""""""""""""
+
 set number relativenumber
 set noswapfile
 set clipboard=unnamedplus
 syntax enable
 set expandtab
+set cmdheight=1
 set nobackup
-set cmdheight=2
 set nowritebackup
 set hlsearch
 set smarttab
 set termbidi
 set hidden
 set mouse=a
+set list
 set nobackup
 set shiftwidth=4
 set tabstop=4
 set autoindent
-set title
 set scrolloff=5
 set sidescrolloff=0
 set signcolumn=no
@@ -25,9 +25,9 @@ set nowrap
 set splitbelow
 set splitright
 set showmatch
-"set cursorline
+set cursorline
 
-"""""""""""""""
+""""""""""""""
 vnoremap > >gv
 vnoremap < <gv
 
@@ -36,10 +36,10 @@ vnoremap K :move '<-2<CR>gv-gv
 vnoremap J :move '>+1<CR>gv-gv
 
 """"""""""""""""""""""""""""""
-nnoremap <C-Up> :resize +1<CR>
-nnoremap <C-Down> :resize -1<CR>
-nnoremap <C-Left> :vertical resize +1<CR>
-nnoremap <C-Right> :vertical resize -1<CR>
+nnoremap <C-Up> :resize +5<CR>
+nnoremap <C-Down> :resize -5<CR>
+nnoremap <C-Left> :vertical resize +5<CR>
+nnoremap <C-Right> :vertical resize -5<CR>
 
 """"""""""""""""""""""""""""""""""""""""""
 let mapleader = ";"
@@ -73,31 +73,27 @@ onoremap kj <esc>         " Operator pending mode
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
-"""""""""""""""
+""""""""""""""""""""""""""""""""""""
 let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
+"colorscheme gruvbox
 
-"""""""""""""""""""
+""""""""""""""""""""""""""""""""""""
 
-"let g:coc_global_extensions = [ 'coc-snippets', 'coc-pairs', 'coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-json' ]
+colorscheme dracula
 
-let g:coc_global_extensions = [ 'coc-snippets', 'coc-tsserver', 'coc-json' ]
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-
-
-
-
-
-
-
-
+"""""""""""""""""""""""""
+nnoremap <C-p> :Files<CR>
 
 
 
