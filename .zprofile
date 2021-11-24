@@ -11,4 +11,3 @@ fi
 
 export gitToken="@_@"
 
-
