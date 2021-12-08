@@ -1,15 +1,18 @@
 
 *foreground:        #FFFFFF
-*background:        #222222
+*background:        #151515
 
-*font:              xft:Operator Mono Lig:Medium:size=12
-*boldFont:          xft:Operator Mono Lig:Medium:size=12
-*italicFont:        xft:Operator Mono Lig:Medium:Italic:size=12
-*boldItalicFont:    xft:Operator Mono Lig:Medium:Italic:size=12
+*font:              xft:operator mono lig:Book:size=12
+*boldFont:          xft:operator mono lig:book:size=12
+*italicFont:        xft:Operator Mono Lig:Book:Italic:size=12
+*boldItalicFont:    xft:Operator Mono Lig:Book:Italic:size=12
 
 *scrollBar:         False
 *letterSpace:       -1
 
 *internalBorder:    0
+
+*transparent:       False
+*shading:           20
 
 

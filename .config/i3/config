@@ -29,8 +29,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-
-exec --no-startup-id feh --bg-scale ~/Pictures/bg/10-12-6k.jpg
+exec --no-startup-id kitty
+exec --no-startup-id feh --bg-scale ~/Pictures/bg/bg.jpg
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   +5%
@@ -42,13 +42,16 @@ bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec urxvt
+bindsym $mod+k exec kitty
+bindsym $mod+q exec nvim-qt
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -l 35 -p ' H & M ' -fn 'Operator Mono Lig:Medium:pixelsize=15'
+bindsym $mod+d exec --no-startup-id dmenu_run -l 35 -p ' Exec => ' -fn 'Operator Mono Lig:Medium:pixelsize=15'
+
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -57,7 +60,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run -l 35 -p ' H & M ' -fn 'Operator M
 
 # change focus
 bindsym $mod+j focus left
-bindsym $mod+k focus down
+# bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
@@ -153,27 +156,27 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+  # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left  will shrink the window’s width.
-        # Pressing right will grow   the window’s width.
-        # Pressing up    will shrink the window’s height.
-        # Pressing down  will grow   the window’s height.
-        bindsym j         resize shrink width  1 px or 1 ppt
-        bindsym k         resize grow   height 1 px or 1 ppt
-        bindsym l         resize shrink height 1 px or 1 ppt
-        bindsym semicolon resize grow   width  1 px or 1 ppt
+  # Pressing left  will shrink the window’s width.
+  # Pressing right will grow   the window’s width.
+  # Pressing up    will shrink the window’s height.
+  # Pressing down  will grow   the window’s height.
+  bindsym j         resize shrink width  1 px or 1 ppt
+  bindsym k         resize grow   height 1 px or 1 ppt
+  bindsym l         resize shrink height 1 px or 1 ppt
+  bindsym semicolon resize grow   width  1 px or 1 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left  resize shrink width  1 px or 1 ppt
-        bindsym Down  resize grow   height 1 px or 1 ppt
-        bindsym Up    resize shrink height 1 px or 1 ppt
-        bindsym Right resize grow   width  1 px or 1 ppt
+  # same bindings, but for the arrow keys
+  bindsym Left  resize shrink width  1 px or 1 ppt
+  bindsym Down  resize grow   height 1 px or 1 ppt
+  bindsym Up    resize shrink height 1 px or 1 ppt
+  bindsym Right resize grow   width  1 px or 1 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+  # back to normal: Enter or Escape or $mod+r
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -181,27 +184,30 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        font pango: Fira Code Retina 12
-        position top
+  font pango: Fira Code Retina 12
+  position top
 
-        mode hide
-        hidden_state hide
-        modifier $mod+shift
+  mode hide
+  hidden_state hide
+  modifier $mod+shift
 
-        status_command i3blocks
+  status_command i3blocks
 }
 
+gaps inner 10
+
+for_window [class=".*"] border pixel 2
+for_window [class=".*"] layout tabbed
 
 bindsym XF86MonBrightnessUp   exec sudo b_up.sh   # increase screen brightness
 bindsym XF86MonBrightnessDown exec sudo b_down.sh # decrease screen brightness
-
-for_window [class=".*"] border pixel 2
-
-for_window [class=".*"] layout tabbed
-
-bindsym $mod+c exec code
-bindsym $mod+b exec google-chrome-stable
-bindsym $mod+t exec thunar
-bindsym $mod+m exec mousepad
+bindsym F10                   exec sudo b_up.sh   # increase screen brightness
+bindsym F9                    exec sudo b_down.sh # decrease screen brightness
+bindsym $mod+c                exec code
+bindsym $mod+b                exec google-chrome-stable
+bindsym $mod+x                exec firefox
+bindsym $mod+t                exec thunar
+bindsym $mod+m                exec mousepad
+bindsym F12                   exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 

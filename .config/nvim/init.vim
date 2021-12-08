@@ -1,34 +1,38 @@
+
 set number relativenumber
 set noswapfile
 set clipboard=unnamedplus
 syntax enable
 set expandtab
+set laststatus=0
 set nobackup
 set nowritebackup
 set hlsearch
 set smartindent
-set updatetime=300
 set smarttab
 set termbidi
 set hidden
 set mouse=a
 set list
 set nobackup
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set autoindent
 set scrolloff=10
 set sidescrolloff=5
-set signcolumn=no
+set signcolumn=yes
 set encoding=utf-8
 set nowrap
 set splitbelow
 set splitright
-set updatetime=1
+set updatetime=100
 set shortmess+=c
 set showmatch
 
-inoremap jk <ESC>
+let mapleader = ";"
+
+nnoremap <leader>v :vsplit<CR>
+nnoremap <leader>h :split<CR>
 
 vnoremap > >gv
 vnoremap < <gv
@@ -36,32 +40,29 @@ vnoremap < <gv
 vnoremap K :move '<-2<CR>gv-gv
 vnoremap J :move '>+1<CR>gv-gv
 
-nnoremap <C-Up> :resize +5<CR>
-nnoremap <C-Down> :resize -5<CR>
-nnoremap <C-Left> :vertical resize +5<CR>
-nnoremap <C-Right> :vertical resize -5<CR>
+nnoremap <C-Up>             :resize +1<CR>
+nnoremap <C-Down>           :resize -1<CR>
+nnoremap <C-Left>  :vertical resize +1<CR>
+nnoremap <C-Right> :vertical resize -1<CR>
 
-let mapleader = ";"
+vmap <leader>y "+y
+nmap <leader>y "+y
+nmap <leader>p "+p
 
-nnoremap <leader>v :vsplit<CR>
-nnoremap <leader>h :split<CR>
+nmap <C-n> :Ntree<CR>
 
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
+Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_italic = 1
 let g:gruvbox_italicize_strings = 1
 colorscheme gruvbox
-
-"colorscheme dracula
-
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 let g:coc_global_extensions = [
     \"coc-css",
@@ -80,8 +81,7 @@ let g:coc_global_extensions = [
     \"coc-tsserver"
     \]
 
-nmap <C-s> :Prettier<CR>
-nmap <C-n> :Ntree<CR>
+nmap <C-s> :CocCommand prettier.formatFile<CR>
 
 nmap <F2> <Plug>(coc-rename)
 
@@ -90,5 +90,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+nmap <leader>c gcc    " Comment Line      on Normal Mode
+vmap <leader>c gc     " Comment Selection on Visual Mode
 
 
