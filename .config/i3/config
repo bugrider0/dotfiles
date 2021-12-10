@@ -29,8 +29,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-exec --no-startup-id kitty
-exec --no-startup-id feh --bg-scale ~/Pictures/bg/bg.jpg
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   +5%
@@ -43,8 +41,6 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec urxvt
-bindsym $mod+k exec kitty
-bindsym $mod+q exec nvim-qt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -94,7 +90,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -194,8 +190,6 @@ bar {
   status_command i3blocks
 }
 
-gaps inner 10
-
 for_window [class=".*"] border pixel 2
 for_window [class=".*"] layout tabbed
 
@@ -205,9 +199,10 @@ bindsym F10                   exec sudo b_up.sh   # increase screen brightness
 bindsym F9                    exec sudo b_down.sh # decrease screen brightness
 bindsym $mod+c                exec code
 bindsym $mod+b                exec google-chrome-stable
-bindsym $mod+x                exec firefox
+bindsym $mod+s                exec ffmpeg -f x11grab -video_size 1366x768 -i $DISPLAY -vframes 1 ~/Pictures/$(date '+%d%m%Y_%H%M%S').jpg
+bindsym $mod+p                exec pavucontrol
 bindsym $mod+t                exec thunar
 bindsym $mod+m                exec mousepad
-bindsym F12                   exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym F12                   exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 
