@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo " $(cat /sys/class/backlight/radeon_bl0/brightness) - 255 "
+
+
