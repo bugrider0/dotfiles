@@ -1,0 +1,18 @@
+total 1588
+drwxr-xr-x. 1 root root    704 Dec 24 04:30 .
+drwxr-xr-x. 1 root root   1594 Dec 24 04:28 ..
+-rw-r--r--. 1 hsn  hsn  118040 Mar 12  2018 IBMPlexMono-BoldItalic.ttf
+-rw-r--r--. 1 hsn  hsn  111440 Mar 12  2018 IBMPlexMono-Bold.ttf
+-rw-r--r--. 1 hsn  hsn  118192 Mar 12  2018 IBMPlexMono-ExtraLightItalic.ttf
+-rw-r--r--. 1 hsn  hsn  109740 Mar 12  2018 IBMPlexMono-ExtraLight.ttf
+-rw-r--r--. 1 hsn  hsn  117448 Mar 12  2018 IBMPlexMono-Italic.ttf
+-rw-r--r--. 1 hsn  hsn  116912 Mar 12  2018 IBMPlexMono-LightItalic.ttf
+-rw-r--r--. 1 hsn  hsn  108932 Mar 12  2018 IBMPlexMono-Light.ttf
+-rw-r--r--. 1 hsn  hsn  117548 Mar 12  2018 IBMPlexMono-MediumItalic.ttf
+-rw-r--r--. 1 hsn  hsn  110420 Mar 12  2018 IBMPlexMono-Medium.ttf
+-rw-r--r--. 1 hsn  hsn  109272 Mar 12  2018 IBMPlexMono-Regular.ttf
+-rw-r--r--. 1 hsn  hsn  120860 Mar 12  2018 IBMPlexMono-SemiBoldItalic.ttf
+-rw-r--r--. 1 hsn  hsn  113892 Mar 12  2018 IBMPlexMono-SemiBold.ttf
+-rw-r--r--. 1 hsn  hsn  119652 Mar 12  2018 IBMPlexMono-ThinItalic.ttf
+-rw-r--r--. 1 hsn  hsn  111592 Mar 12  2018 IBMPlexMono-Thin.ttf
+-rw-r--r--. 1 root root      0 Dec 24 04:30 n.txt
