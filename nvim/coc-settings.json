@@ -1,0 +1,7 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
+  "prettier.tabWidth": 2,
+  "hover.target": "preview",
+  "tsserver.log": "verbose",
+  "list.height": 20
+}

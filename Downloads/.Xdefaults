@@ -1,0 +1,15 @@
+
+*foreground:        #FFFFFF
+*background:        #111111
+
+*font:              xft:SF Mono:Medium:size=11
+*boldFont:          xft:SF Mono:Medium:size=11
+*italicFont:        xft:SF Mono:Medium:size=11
+*boldItalicFont:    xft:SF Mono:Medium:size=11
+
+*scrollBar:         False
+*letterSpace:       -1
+!    *lineSpace:         2
+*internalBorder:    0
+
+

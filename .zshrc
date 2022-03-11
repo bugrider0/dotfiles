@@ -1,6 +1,9 @@
-setxkbmap -option "caps:swapescape"
 
-ZSH_THEME="robbyrussell"
+sudo swapoff --all
+
+# ZSH_THEME="jonathan"
+ZSH_THEME="strug"
+# ZSH_THEME="robbyrussell"
 
 plugins=(
   git
@@ -36,5 +39,7 @@ alias mp="mpv ~/Music"
 alias nets="netstat -na | grep : "
 
 alias screenCast="ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+0,0 -f pulse -ac 2 -i default output.mkv"
+
+alias ko="c && gss"
 
 
