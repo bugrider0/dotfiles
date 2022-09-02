@@ -30,6 +30,8 @@ sudo b43-fwcutter -w /lib/firmware /path/to/broadcom-wl-6.30.163.46.wl_apsta.o
 
 also You Can Download Oroginal Version of This Firmware From https://wireless.wiki.kernel.org/
 
+https://github.com/lwfinger/rtw89
+
 ![ScreenShot](./15122021_181335.jpg)
 ![ScreenShot2](./02092022_095307.jpg)
 
