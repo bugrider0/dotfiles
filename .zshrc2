@@ -1,0 +1,42 @@
+ZSH_THEME="strug"
+
+zstyle ':omz:update' mode disabled
+
+plugins=(
+    git
+    z
+    zsh-autosuggestions        # https://github.com/zsh-users/zsh-autosuggestions.git
+    zsh-syntax-highlighting    # https://github.com/zsh-users/zsh-syntax-highlighting.git
+    docker
+)
+
+source /home/hsn/.oh-my-zsh/oh-my-zsh.sh
+
+alias l="ls -trhFs"
+alias a="ls -trhFas"
+alias ll="ls -ltrhFs"
+alias la="ls -ltrhFas"
+
+alias lt="tree -aFI 'node_modules|public|dist|.git'"
+alias ltl="tree -aFL"
+
+alias c="clear"
+alias e="exit"
+
+alias servers="ss -nlt"
+alias nets="netstat -tupln"
+alias netss="netstat -na | grep : "
+
+alias r="ranger"
+alias mp="mpv --no-video"
+alias nm="find . -name 'node_modules' -type d -prune"
+alias dnm="find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
+
+alias size="du -hs"
+
+alias musicalityServer="cd /home/hsn/Documents/pem && ssh -i musicality_key.pem azureuser@51.142.77.38"
+alias studentServer="cd /home/hsn/Documents/pem && ssh -i studentapp_key.pem azureuser@20.108.249.236"
+alias dbs="cat /home/hsn/Documents/dbs.txt"
+alias gts="gst"
+
+

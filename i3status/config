@@ -1,0 +1,102 @@
+###############################################################################
+# ceerious i3 status config
+# see "man i3status" for documentation.
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s: ß
+# If the above line is not correctly displayed, fix your editor first!
+###############################################################################
+
+general {
+    interval        = 1
+    colors          = true
+    color_good      = '#88b090'
+    color_degraded  = '#ccdc90'
+    color_bad       = '#FF0000'
+    }
+
+order += "read_file BRIGHTNESS"
+order += "volume master"
+order += "disk /"
+order += "battery all"
+order += "cpu_temperature 0"
+order += "cpu_usage 0"
+order += "memory"
+order += "tztime date"
+order += "tztime monthAndDay"
+order += "tztime time"
+order += "ethernet _first_"
+order += "wireless _first_"
+
+read_file BRIGHTNESS {
+    format         = "%content"
+    path           = "/sys/class/backlight/amdgpu_bl0/brightness"
+    max_characters = 3
+    }
+
+volume master {
+    format       = "%volume"
+    format_muted = "Mute"
+    device       = "default"
+    mixer        = "Master"
+    mixer_idx    = 0
+    }
+
+disk "/" {
+	format         = "%avail"
+	prefix_type	   = custom
+	low_threshold  = 20
+	threshold_type = percentage_avail
+    }
+
+
+battery all {
+    format                   = "%status %percentage"
+    format_down              = ""
+    last_full_capacity       = true
+    integer_battery_capacity = true
+    low_threshold            = 30
+    threshold_type           = percentage
+    hide_seconds             = true
+    status_chr  = "Charging"
+    status_bat  = "Battery"
+    status_unk  = "Battery"
+    status_full = "Full"
+    }
+
+cpu_usage {
+    format = "%usage"
+    }
+
+cpu_temperature 0 {
+	format = "%degrees°C"
+    }
+
+memory {
+    format             = "%available"
+    threshold_degraded = "1G"
+    format_degraded    = "%available"
+    }
+
+tztime date {
+    format = "%Y-%m-%d"
+    }
+
+tztime monthAndDay {
+    format = "%A %B"
+    }
+
+tztime time {
+    format = "%H:%M"
+    }
+
+ethernet _first_ {
+    format_up   = "%ip"
+    format_down = ""
+    }
+
+wireless _first_ {
+    format_up   = "%essid%quality"
+    format_down = ""
+    }
+
+

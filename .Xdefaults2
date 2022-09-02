@@ -1,0 +1,33 @@
+*background: #000000
+*foreground: #FFFFFF
+
+*font:           xft:SF Mono:size=11
+*italicFont:     xft:SF Mono:size=11
+*boldFont:       xft:SF Mono:size=11
+*boldItalicFont: xft:SF Mono:size=11
+
+*scrollBar: False
+
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,selection-to-clipboard,fullscreen,resize-font
+URxvt.url-select.launcher:  google-chrome-stable
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+URxvt.clipboard.autocopy:   true
+URxvt.keysym.M-c:           perl:clipboard:copy
+URxvt.keysym.M-v:           perl:clipboard:paste
+URxvt.keysym.F11:           perl:fullscreen:switch
+URxvt.keysym.C-Down:        resize-font:smaller
+URxvt.keysym.C-Up:          resize-font:bigger
+
+URxvt.iso14755:             false
+URxvt.iso14755_52:          false
+
+*letterSpace:    -1
+!*internalBorder: 0
+
+!*transparent:    False
+!*shading:        20
+
+
